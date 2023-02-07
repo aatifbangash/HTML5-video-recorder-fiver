@@ -1,0 +1,710 @@
+<html lang="en"><head>
+  <link rel="stylesheet" href="assets/css/video-recorder.css">
+</head>
+
+<body translate="no">
+<div class="page_wrap">
+  <div class="content clearfix">
+    <div class="root_padding">
+  
+  <table class="t_5001">
+        <tbody><tr>
+          <td class="c_2">
+            <div class="my_v2_recorder_container">
+              <div class="wc-video-recorder-container">
+                <!-- apply remove-video class -->
+                <div class="video-recorder">
+                  <div class="video-container" id="video-container"><video id="video-preview" autoplay playsinline class="video-player"><source id="video-player-source" src='' type='video/webm'></video><video id="video-preview2" style="display:none;position:absolute;top:0px;" autoplay playsinline class="video-player"></video>
+                  </div>
+                  <div class="record-timer"> <div class="icon"></div> <div class="time"> <span class="time-elapsed">00:00</span> <span>/</span> <span class="time-total">01:18:00</span> </div> </div>
+          <div class="bottom-menu">
+                    <div class="mode-switch flex-1 flex-left">
+                      <button class="btn-photo" style="display:none;">
+                        <svg width="23px" height="20px" viewBox="0 0 23 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" overflow="visible">
+                          <defs></defs>
+                          <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="cameraIcon" fill-rule="nonzero" fill="#FFFFFF">
+                              <ellipse id="Oval" cx="11.5" cy="11.1111111" rx="3.68" ry="3.55555556"></ellipse>
+                              <path d="M8.05,0 L6,2 L2.3545,2 C1.0895,2 0.0545,3 0.0545,4.22222222 L0,17.7777778 C0,19 1.035,20 2.3,20 L20.7,20 C21.965,20 23,19 23,17.7777778 L23,4.22222222 C23,3 21.965,2 20.7,2 L17.0545,2 L14.95,0 L8.05,0 Z M11.5,16.6666667 C8.326,16.6666667 5.75,14.1777778 5.75,11.1111111 C5.75,8.04444444 8.326,5.55555556 11.5,5.55555556 C14.674,5.55555556 17.25,8.04444444 17.25,11.1111111 C17.25,14.1777778 14.674,16.6666667 11.5,16.6666667 Z" id="Shape"></path>
+                            </g>
+                          </g>
+                        </svg>
+                      </button>
+                    </div>
+          <div class="flex-1 flex-center">
+                      <div class="btn-record" id="btn-record"> <i class="icn-record"> <i class="icn-record-inner"></i> </i>
+                        <!--<div class="record-timer"> 00:00 </div>-->
+                        <div class="processing-info">
+                          <div class="processing-info-inner"> </div>
+                          <div class="processing-text"> <span class="the-text">Processing...</span><span class="processing-progress" id="processing-progress">(0%)</span>
+                            <div class="btn-cancel-proccessing">
+                              <svg width="33px" height="33px" viewBox="0 0 33 33" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <defs>
+                                  <circle id="path-1" cx="12.5" cy="12.5" r="12.5"></circle>
+                                  <filter x="-28.0%" y="-20.0%" width="156.0%" height="156.0%" filterUnits="objectBoundingBox" id="filter-2">
+                                    <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+                                    <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+                                    <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+                                  </filter>
+                                </defs>
+                                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                  <g id="cancel_processing" transform="translate(4.000000, 2.000000)">
+                                    <g id="Oval" opacity="0.699999988">
+                                      <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                                      <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                                    </g>
+                                    <path d="M17.3453571,7.65464286 L17.3453571,7.65464286 L17.3453571,7.65464286 C16.9838079,7.29309359 16.3976207,7.29309359 16.0360714,7.65464286 L12.5,11.1907143 L8.96392857,7.65464286 L8.96392857,7.65464286 C8.6023793,7.29309359 8.01619212,7.29309359 7.65464286,7.65464286 L7.65464286,7.65464286 L7.65464286,7.65464286 C7.29309359,8.01619212 7.29309359,8.6023793 7.65464286,8.96392857 L11.1907143,12.5 L7.65464286,16.0360714 L7.65464286,16.0360714 C7.29309359,16.3976207 7.29309359,16.9838079 7.65464286,17.3453571 L7.65464286,17.3453571 L7.65464286,17.3453571 C8.01619212,17.7069064 8.6023793,17.7069064 8.96392857,17.3453571 L12.5,13.8092857 L16.0360714,17.3453571 L16.0360714,17.3453571 C16.3976207,17.7069064 16.9838079,17.7069064 17.3453571,17.3453571 L17.3453571,17.3453571 L17.3453571,17.3453571 C17.7069064,16.9838079 17.7069064,16.3976207 17.3453571,16.0360714 L13.8092857,12.5 L17.3453571,8.96392857 L17.3453571,8.96392857 C17.7069064,8.6023793 17.7069064,8.01619212 17.3453571,7.65464286 Z" id="Shape" fill="#272A30" fill-rule="nonzero"></path>
+                                  </g>
+                                </g>
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <button type="button" class="btn-pause-record" onclick="pauseRecorder();"> <i class="icn-pause-record"> <svg width="12px" height="15px" viewBox="0 0 12 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> <defs></defs> <g id="webcamera.io" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="ui_kit" transform="translate(-117.000000, -695.000000)" fill="#FFFFFF"> <g id="Group-3" transform="translate(100.000000, 680.000000)"> <g id="record_pause" transform="translate(17.000000, 15.000000)"> <rect id="Rectangle-6" x="0" y="0" width="4" height="15" rx="1"></rect> <rect id="Rectangle-6-Copy-2" x="8" y="0" width="4" height="15" rx="1"></rect> </g> </g> </g> </g> </svg> </i> </button>
+                    </div>
+          <div class="flex-1 flex-right">
+                      <div class="settings">
+                        <button type="button" class="btn-settings" onclick="toggleSettings();">
+                          <svg width="21px" height="21px" viewBox="0 0 21 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <defs></defs>
+                            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                              <path d="M18.0172982,11.529 C18.0592982,11.193 18.0907982,10.857 18.0907982,10.5 C18.0907982,10.143 18.0592982,9.807 18.0172982,9.471 L20.2327982,7.7385 C20.4322982,7.581 20.4847982,7.2975 20.3587982,7.0665 L18.2587982,3.4335 C18.1327982,3.2025 17.8492982,3.1185 17.6182982,3.2025 L15.0037982,4.2525 C14.4577982,3.8325 13.8697982,3.486 13.2292982,3.2235 L12.8302982,0.441 C12.7987982,0.189 12.5782982,0 12.3157982,0 L8.11579818,0 C7.85329818,0 7.63279818,0.189 7.60129818,0.441 L7.20229818,3.2235 C6.56179818,3.486 5.97379818,3.843 5.42779818,4.2525 L2.81329818,3.2025 C2.57179818,3.108 2.29879818,3.2025 2.17279818,3.4335 L0.0727981841,7.0665 C-0.0637018159,7.2975 -0.000701815872,7.581 0.198798184,7.7385 L2.41429818,9.471 C2.37229818,9.807 2.34079818,10.1535 2.34079818,10.5 C2.34079818,10.8465 2.37229818,11.193 2.41429818,11.529 L0.198798184,13.2615 C-0.000701815872,13.419 -0.0532018159,13.7025 0.0727981841,13.9335 L2.17279818,17.5665 C2.29879818,17.7975 2.58229818,17.8815 2.81329818,17.7975 L5.42779818,16.7475 C5.97379818,17.1675 6.56179818,17.514 7.20229818,17.7765 L7.60129818,20.559 C7.63279818,20.811 7.85329818,21 8.11579818,21 L12.3157982,21 C12.5782982,21 12.7987982,20.811 12.8302982,20.559 L13.2292982,17.7765 C13.8697982,17.514 14.4577982,17.157 15.0037982,16.7475 L17.6182982,17.7975 C17.8597982,17.892 18.1327982,17.7975 18.2587982,17.5665 L20.3587982,13.9335 C20.4847982,13.7025 20.4322982,13.419 20.2327982,13.2615 L18.0172982,11.529 Z M10.2157982,14.175 C8.18929818,14.175 6.54079818,12.5265 6.54079818,10.5 C6.54079818,8.4735 8.18929818,6.825 10.2157982,6.825 C12.2422982,6.825 13.8907982,8.4735 13.8907982,10.5 C13.8907982,12.5265 12.2422982,14.175 10.2157982,14.175 Z" id="settings" fill="#FFFFFF" fill-rule="nonzero"></path>
+                            </g>
+                          </svg>
+                        </button>
+                        <div class="dialog-settings hidden">
+                          <div class="settings-group mic-enable active"> 
+                            <div class="settings-header wrapper"> 
+                              <span>Microphone</span> 
+                              <div class="mic-check active"> <i class="mic-check-icon"> </i> </div> 
+                            </div> 
+                            <div class="settings-mics visible"> 
+                              <ul class="select-mic" id="select-mic">
+                                <!--<li data-device-id="default" data-device-label="Default" class="mic-item active"><i class="a-indicator"></i><span>Default</span>
+                                </li>
+                                <li data-device-id="f2e25d74af7b662f907b294a074554022cb3f274c078c8906ee11e15c358044f" data-device-label="Built-in Audio Analog Stereo" class="mic-item"><i class="a-indicator"></i><span>Built-in Audio Analog Stereo</span>
+                                </li>-->
+                              </ul> 
+                              </div> 
+                          </div>
+
+                          <div class="settings-group mirror-enable" id="mirror-enable">
+                            <div class="settings-header wrapper"> <span>Mirror mode</span>
+                              <div class="mic-check active"> <i class="mic-check-icon"> </i> </div>
+                            </div>
+                          </div>
+
+                          <div class="settings-group settings-camera visible" id="settings-camera"> 
+                            <div> 
+                              <div class="settings-header">Camera</div> 
+                              <ul class="select-camera" id="select-camera"></ul> 
+                            </div> 
+                          </div>
+                          <div class="settings-group settings-other"> <div> <div class="settings-header">Quality</div> <ul class="quality-selector"> 
+                            <li class="btn-quality auto hidden" data-quality="auto" data-quality-width="auto"> <i class="a-indicator"></i> <span></span> </li> 
+                            <li class="btn-quality hidden" data-quality="1080" data-quality-width="1920"> <i class="a-indicator"></i> <span>1080p</span> </li> 
+                            <li class="btn-quality active" data-quality="720" data-quality-width="1280"> <i class="a-indicator"></i> <span>Default</span> </li> 
+                            <li class="btn-quality hidden" data-quality="480" data-quality-width="854"> <i class="a-indicator"></i> <span>480p</span> </li> 
+                          </ul> </div> </div>
+                        </div>
+                      </div>
+                      <button class="btn-fs" onclick="openFullscreen();">
+                        <svg width="21px" height="20px" viewBox="0 0 21 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" overflow="visible">
+                          <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="fullscreen" fill="#FFFFFF" vector-effect="non-scaling-stroke">
+                              <polygon id="Path4" points="18 17 14 17 14 20 21 20 21 13 18 13"></polygon>
+                              <polygon id="Path3" fill-rule="nonzero" points="3 13 0 13 0 20 7 20 7 17 3 17"></polygon>
+                              <polygon id="Path2" points="14 0 14 3 18 3 18 7 21 7 21 0"></polygon>
+                              <polygon id="Path1" points="0 7 3 7 3 3 7 3 7 0 0 0"></polygon>
+                            </g>
+                          </g>
+                        </svg>
+                      </button>
+                    </div>
+          </div>
+          <!-- start here -->
+          <div class="video-player-container" id="video-player-container"><div class="video-player-wrapper"> <video class="video-player" id="video-player"></video> <div class="video-player-controls"> <div class="wrap"> <div class="video-controls" id="video-controls"> <button class="btn-play-video" onclick="playVideo();"> <div class="arrow"></div> </button> <div class="out-current-time" id="out-current-time"> 00:00 </div> <div class="control-seek-bar" id="control-seek-bar"> <div class="control-seek-bar-back"> <div class="control-seek-bar-back-inner"></div> </div> <div class="control-seek-bar-stripe" id="control-seek-bar-stripe"> </div> <div class="control-seek-bar-dot" id="control-seek-bar-dot"> </div> </div> <div class="out-total-time" id="out-total-time">--:--</div> </div> <a class="btn-save" id="btn-save" onclick="downloadTag();" target="_blank" title="Download Video"> <svg width="14px" height="17px" viewBox="0 0 14 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> <defs></defs> <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <path d="M14,6 L10,6 L10,0 L4,0 L4,6 L0,6 L7,13 L14,6 Z M0,15 L0,17 L14,17 L14,15 L0,15 Z" id="ui_kit" fill="#2E3136" fill-rule="nonzero"></path> </g> </svg> <span>Save</span> </a> <button class="btn-del" onclick="deleteVideo();"> <svg width="16px" height="20px" viewBox="0 0 16 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> <defs></defs> <g id="webcamera.io" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="ui_kit" transform="translate(-115.000000, -503.000000)" fill-rule="nonzero" fill="#FFFFFF"> <g id="Group" transform="translate(100.000000, 490.000000)"> <path d="M16,31 C16,32.1 16.9,33 18,33 L28,33 C29.1,33 30,32.1 30,31 L30,19 L16,19 L16,31 Z M31,14 L26.5,14 L25.5,13 L20.5,13 L19.5,14 L15,14 L15,17 L31,17 L31,14 Z" id="delete"></path> </g> </g> </g> </svg> </button> </div> <button class="btn-fs"> <svg width="21px" height="20px" viewBox="0 0 21 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" overflow="visible"> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="fullscreen" fill="#FFFFFF" vector-effect="non-scaling-stroke"> <polygon id="Path4" points="18 17 14 17 14 20 21 20 21 13 18 13"></polygon> <polygon id="Path3" fill-rule="nonzero" points="3 13 0 13 0 20 7 20 7 17 3 17"></polygon> <polygon id="Path2" points="14 0 14 3 18 3 18 7 21 7 21 0"></polygon> <polygon id="Path1" points="0 7 3 7 3 3 7 3 7 0 0 0"></polygon> </g> </g> </svg> </button> </div> <button type="button" onclick="deleteVideo();" class="btn-close"> <svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="x" fill="#FFFFFF"> <rect id="Rectangle" transform="translate(7.000000, 7.000000) rotate(45.000000) translate(-7.000000, -7.000000) " x="6" y="-1.5" width="2" height="17"></rect> <rect id="Rectangle" transform="translate(7.000000, 7.000000) rotate(-45.000000) translate(-7.000000, -7.000000) " x="6" y="-1.5" width="2" height="17"></rect> </g> </g> </svg> </button></div></div>
+          <!-- end here -->
+          <div class="dialog remove-video-confirmation"> <div> <div class="h">Delete video?</div> <div class="desc"></div> <div class="buttons"> <button class="btn white btn-decline-remove-req" onclick="closeDialog('remove-video');" type="button">Cancel</button> <button class="btn red btn-accept-remove-req" onclick="reInitialize();" type="button">Delete</button> </div> </div> 
+          </div>
+          <div class="dialog save-video-confirmation"> <div> <div class="h">Tags</div> 
+          <div class="desc"><input type="text" name="tag" id="tag" style="outline: none;opacity: 1;color: #FFF;border: 0px;border-bottom: 2px solid #FFF;width: 245px;height: 37px;padding: 5px;margin: 10px;background-color: rgba(0, 0, 0, 0);margin-top:20px;" /><br />Ej: yourname, eventname, location</div> <div class="buttons"> <button class="btn white btn-save-remove-req" type="button" onclick="closeDialog('save-video');">Cancel</button> <button class="btn red btn-accept-save-req" type="button" onclick="saveVideo();">Save</button> </div> </div> 
+          </div>
+        </div>
+        </div>
+      </div>
+      </td>
+    </tr></table>
+    </div>
+  </div>
+</div>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/detectRTC.js"></script>
+<script src="assets/js/RecordRTC.js"></script>
+<script>
+//var video = document.querySelector('video');
+var video = document.getElementById('video-preview');
+var video2 = document.getElementById('video-preview2');
+
+var cameras = [];
+var audios = [];
+var cam_init;
+var recording_started = 0;
+var mirror_mode = 0;
+
+var recorder; // globally accessible
+var canvasStream;
+var recorder_pause_state = 0;
+var totalSeconds = 0;
+var myInterval;
+var progress_bar = document.getElementById('video-controls');
+const vid = document.getElementById('video-player');
+var oneUnit;
+var uploaded_file = '';
+
+window.onload = function() {
+  //this.disabled = true;
+  
+  captureCamera(function(camera) {
+    cam_init = camera;
+    video.muted = true;
+    video.volume = 0;
+    video.srcObject = cam_init;
+    document.getElementById('settings-camera').style.display = 'block';
+    document.getElementById('select-camera').innerHTML = '<li data-device-id="'+cameras[0].id+'" data-device-label="'+cameras[0].label+'" class="camera-item active"><i class="a-indicator"></i><span>'+cameras[0].label.substring(0, cameras[0].label.indexOf('('))+' </span></li>';
+
+    for (var i=0;i<audios.length;i++){
+      if(i == 0){
+        document.getElementById('select-mic').innerHTML += '<li id="'+audios[i].id+'" data-device-id="'+audios[i].id+'" data-device-label="'+audios[i].label+'" class="mic-item active"><i class="a-indicator"></i><span>'+audios[i].label+'</span></li>';
+      }else{
+        document.getElementById('select-mic').innerHTML += '<li id="'+audios[i].id+'" data-device-id="'+audios[i].id+'" data-device-label="'+audios[i].label+'" class="mic-item"><i class="a-indicator"></i><span>'+audios[i].label+'</span></li>';
+      }
+    }
+    
+
+  });
+};
+
+DetectRTC.load(function() {
+  captureAllMedia();
+});
+
+$(".select-mic").on('click', function(event){
+    //console.log(event.target.parentNode.id);
+    $(".mic-item").removeClass('active');
+    $("#"+event.target.parentNode.id).addClass('active');
+
+    var audioConstraints = {
+        id: event.target.parentNode.id
+    };
+
+    if(!!navigator.webkitGetUserMedia) {
+        audioConstraints = {
+            mandatory: {},
+            optional: [{
+                sourceId: event.target.parentNode.id
+            }]
+        }
+    }
+
+    navigator.getUserMedia = navigator.mozGetUserMedia || navigator.webkitGetUserMedia;
+    navigator.getUserMedia({ audio: audioConstraints, video: { mandatory: {
+            maxHeight: 470,
+            maxWidth: 854
+        },
+        optional: [
+            {minWidth: 320},
+            {minWidth: 640},
+            {minWidth: 960},
+            {minWidth: 1024},
+            {minWidth: 1280}
+        ] 
+      }  }, function(camera) {
+      cam_init = camera;
+      video.muted = true;
+      video.volume = 0;
+      video.srcObject = cam_init;
+    }, function(error) {
+        alert(JSON.stringify(error));
+    });
+});
+
+function captureAllMedia() {
+  var streams = [];
+  var donotDuplicateDevices = {};
+
+  DetectRTC.videoInputDevices.forEach(function(device, idx) {
+      cameras.push(device);
+  });
+
+  DetectRTC.audioInputDevices.forEach(function(device, idx) {
+      //console.log(device);
+      audios.push(device);
+  });
+}
+
+function getFileName(fileExtension) {
+    var d = new Date();
+    var year = d.getUTCFullYear();
+    var month = d.getUTCMonth();
+    var date = d.getUTCDate();
+    return 'RecordRTC-' + year + month + date + '-' + getRandomString() + '.' + fileExtension;
+}
+
+function getRandomString() {
+    if (window.crypto && window.crypto.getRandomValues && navigator.userAgent.indexOf('Safari') === -1) {
+        var a = window.crypto.getRandomValues(new Uint32Array(3)),
+            token = '';
+        for (var i = 0, l = a.length; i < l; i++) {
+            token += a[i].toString(36);
+        }
+        return token;
+    } else {
+        return (Math.random() * new Date().getTime()).toString(36).replace(/\./g, '');
+    }
+}
+
+document.getElementById('btn-record').onclick = function() {
+  if(mirror_mode == 0){
+    if(recording_started){
+        clearInterval(myInterval);
+        $( ".btn-record" ).removeClass( "active" );
+        $( ".video-recorder" ).addClass( "processing" );
+        recorder.stopRecording(function(){
+            var blob = recorder.getBlob();
+            var fileName = getFileName('webm');
+            var fileObject = new File([blob], fileName, {
+                type: 'video/webm'
+            });
+
+            var formData = new FormData();
+            // recorded data
+            formData.append('video-blob', fileObject);
+
+            // file name
+            formData.append('video-filename', fileObject.name);
+            //var upload_url = 'https://webrtcweb.com/f/';
+            var upload_url = 'recordRTC';
+
+            var upload_directory = upload_url+'/uploads/';
+            // var upload_directory = 'RecordRTC-to-PHP/uploads/';
+
+            // upload using jQuery
+            $.ajax({
+                xhr: function()
+                {
+                  var xhr = new window.XMLHttpRequest();
+                  //Upload progress
+                  xhr.upload.addEventListener("progress", function(evt){
+                    if (evt.lengthComputable) {
+                      var percentComplete = evt.loaded / evt.total;
+                      //Do something with upload progress
+                      document.getElementById('processing-progress').innerHTML = percentComplete+'%';
+                      console.log(percentComplete);
+                    }
+                  }, false);
+                  return xhr;
+                },
+                url: upload_url+'/save.php', // replace with your own server URL
+                data: formData,
+                cache: false,
+                contentType: false,
+                processData: false,
+                type: 'POST',
+                success: function(response) {
+                    if (response === 'success') {
+                        //alert('successfully uploaded recorded blob');
+
+                        // file path on server
+                        var fileDownloadURL = upload_directory + fileObject.name;
+                        //$( "video-recorder" ).addClass( "save-video" );
+                        document.getElementById('video-container').style.display = 'none';
+                        document.getElementById('video-player-container').style.display = 'block';
+                        document.getElementById('video-player').src = '';
+                        document.getElementById('video-player').src = fileDownloadURL;
+                        document.getElementById('video-player-source').src = '';
+                        document.getElementById('video-player-source').src = fileDownloadURL;
+                        uploaded_file = fileObject.name;
+                        //$(".bottom-menu").html();
+                    } else {
+                        alert(response); // error/failure
+                    }
+                }
+            });
+        });
+
+    }else{
+      $( ".btn-record" ).addClass( "active" );
+      myInterval = setInterval(setTime, 1000);
+      recorder = RecordRTC(cam_init, {
+          type: 'video'
+      });
+
+      recorder.startRecording();
+      recording_started = 1;
+      recorder.camera = cam_init;
+    }
+  }else if(mirror_mode == 1){
+      if(recording_started){
+        clearInterval(myInterval);
+        $( ".btn-record" ).removeClass( "active" );
+        $( ".video-recorder" ).addClass( "processing" );
+        recorder.stopRecording(function(){
+            var blob = recorder.getBlob();
+            var fileName = getFileName('webm');
+            var fileObject = new File([blob], fileName, {
+                type: 'video/webm'
+            });
+
+            var formData = new FormData();
+            // recorded data
+            formData.append('video-blob', fileObject);
+
+            // file name
+            formData.append('video-filename', fileObject.name);
+            //var upload_url = 'https://webrtcweb.com/f/';
+            var upload_url = 'recordRTC';
+
+            var upload_directory = upload_url+'/uploads/';
+            // var upload_directory = 'RecordRTC-to-PHP/uploads/';
+
+            // upload using jQuery
+            $.ajax({
+                xhr: function()
+                {
+                  var xhr = new window.XMLHttpRequest();
+                  //Upload progress
+                  xhr.upload.addEventListener("progress", function(evt){
+                    if (evt.lengthComputable) {
+                      var percentComplete = evt.loaded / evt.total;
+                      //Do something with upload progress
+                      document.getElementById('processing-progress').innerHTML = percentComplete+'%';
+                      console.log(percentComplete);
+                    }
+                  }, false);
+                  return xhr;
+                },
+                url: upload_url+'/save.php', // replace with your own server URL
+                data: formData,
+                cache: false,
+                contentType: false,
+                processData: false,
+                type: 'POST',
+                success: function(response) {
+                    if (response === 'success') {
+                        //alert('successfully uploaded recorded blob');
+
+                        // file path on server
+                        var fileDownloadURL = upload_directory + fileObject.name;
+                        //$( "video-recorder" ).addClass( "save-video" );
+                        document.getElementById('video-container').style.display = 'none';
+                        document.getElementById('video-player-container').style.display = 'block';
+                        document.getElementById('video-player').src = '';
+                        document.getElementById('video-player').src = fileDownloadURL;
+                        document.getElementById('video-player-source').src = '';
+                        document.getElementById('video-player-source').src = fileDownloadURL;
+                        
+                        //$(".bottom-menu").html();
+                    } else {
+                        alert(response); // error/failure
+                    }
+                }
+            });
+        });
+
+    }else{
+      var audioPlusCanvasStream = new MediaStream();
+      recording_started = 1;
+      getTracks(canvasStream, 'video').forEach(function(videoTrack) {
+          audioPlusCanvasStream.addTrack(videoTrack);
+      });
+      
+      getTracks(cam_init, 'audio').forEach(function(audioTrack) {
+          audioPlusCanvasStream.addTrack(audioTrack);
+      });
+      $( ".btn-record" ).addClass( "active" );
+      myInterval = setInterval(setTime, 1000);
+      recorder = RecordRTC(audioPlusCanvasStream, {
+          type: 'video'
+      });
+
+      recorder.setRecordingDuration(200 * 1000).onRecordingStopped(function() {
+          var blob = recorder.getBlob();
+          recorder = null;
+          cam_init.stop();
+
+          video2.src = video2.srcObject = null;
+
+          video.muted = false;
+          video.src = URL.createObjectURL(blob);
+      });
+
+      recorder.startRecording();
+      recording_started = 1;
+      recorder.camera = cam_init;
+    }
+  }
+};
+
+document.getElementById('mirror-enable').onclick = function() {
+  if(mirror_mode == 0){
+    $( ".mirror-enable" ).addClass( 'active' );
+    video2.style.display = 'block';
+    mirror_mode = 1;
+    captureCamera(function(camera) {
+      video.muted = true;
+      video.srcObject = camera;
+      cam_init = camera;
+      var canvas = document.createElement('canvas');
+      var context = canvas.getContext('2d');
+
+      canvas.style = 'position: absolute; top: 0; left: 0; opacity: 0; margin-top: -9999999999; margin-left: -9999999999; top: -9999999999; left: -9999999999; z-index: -1;';
+      document.body.appendChild(canvas);
+      canvasStream = canvas.captureStream();
+      video2.srcObject = canvasStream;
+
+      (function looper() {
+          //if(!recorder) return; // ignore/skip on stop-recording
+
+          canvas.width = video.clientWidth;
+          canvas.height = video.clientHeight;
+
+          context.clearRect(0, 0, canvas.width, canvas.height);
+          context.save();
+          context.translate(canvas.width, 0);
+          context.scale(-1, 1);
+          context.drawImage(video, 0, 0, canvas.width, canvas.height);
+          context.setTransform(1, 0, 0, 1, 0, 0);
+          context.restore();
+
+          // repeat (looper)
+          setTimeout(looper, 100);
+      })();
+
+    });
+  }else if(mirror_mode == 1){
+    $( ".mirror-enable" ).removeClass( 'active' );
+    video2.style.display = 'none';
+    mirror_mode = 0;
+    captureCamera(function(camera) {
+      cam_init = camera;
+      video.muted = true;
+      video.volume = 0;
+      video.srcObject = cam_init;
+    });
+  }
+};
+
+
+function captureCamera(callback) {
+    navigator.mediaDevices.getUserMedia({ audio: true, video: { mandatory: {
+            maxHeight: 470,
+            maxWidth: 854
+        },
+        optional: [
+            {minWidth: 320},
+            {minWidth: 640},
+            {minWidth: 960},
+            {minWidth: 1024},
+            {minWidth: 1280}
+        ] 
+      } 
+    }).then(function(camera) {
+        callback(camera);
+    }).catch(function(error) {
+        alert('Unable to capture your camera. Please check console logs.');
+        console.error(error);
+    });
+}
+
+vid.addEventListener('loadedmetadata', function() {
+   window.setInterval(function(t){
+      if (vid.readyState > 0) {
+        var duration = vid.duration;
+        var vid_duration = Math.round(vid.duration);
+        var timeFormat = timestampToHMS(totalSeconds);
+        document.getElementById('out-total-time').innerHTML = timeFormat;
+        oneUnit = progress_bar.style.width/totalSeconds;
+        clearInterval(t);
+      }
+    },500);
+});
+
+vid.addEventListener('timeupdate', function() {
+   var bar_width = Math.floor((vid.currentTime / totalSeconds) * 100);
+   if(Math.floor((vid.currentTime / totalSeconds) * 100) > 100){
+      bar_width = 100;
+   }
+   document.getElementById('control-seek-bar-stripe').style.width = bar_width+'%';
+   document.getElementById('control-seek-bar-dot').style.left = bar_width+'%';
+   var cur_time = timestampToHMS(Math.floor(vid.currentTime));
+   document.getElementById('out-current-time').innerHTML = cur_time;
+   if (vid.ended) {
+      $( ".video-player-wrapper" ).removeClass( 'play-mode' );
+   }
+});
+
+function pauseRecorder(){
+  if(recorder_pause_state == 0){
+    recorder.pauseRecording();
+    recorder_pause_state = 1;
+  }else{
+    recorder_pause_state = 0;
+    recorder.resumeRecording();
+  }
+}
+
+function stopRecordingCallback() {
+    video.src = video.srcObject = null;
+    video.muted = false;
+    video.volume = 1;
+    video.src = URL.createObjectURL(recorder.getBlob());
+    
+    recorder.camera.stop();
+    recorder.destroy();
+    recorder = null;
+}
+
+function timestampToHMS(timestamp){
+  //console.log(timestamp);
+  var hours = Math.floor(timestamp / 60 / 60);
+  var minutes = Math.floor(timestamp / 60) - (hours * 60);
+  var seconds = timestamp % 60;
+  if(hours>0){
+    var formatted = hours.toString().padStart(2, '0') + ':' + minutes.toString().padStart(2, '0') + ':' + seconds.toString().padStart(2, '0');
+  }else{
+    var formatted = minutes.toString().padStart(2, '0') + ':' + seconds.toString().padStart(2, '0');
+  }
+  
+  return formatted;
+}
+
+function downloadTag(){
+  $( ".video-recorder" ).addClass( "save-video" );
+}
+
+function playVideo(){
+  $( ".video-player-wrapper" ).toggleClass( 'play-mode' );
+  if (vid.paused || vid.ended) {
+    vid.play();
+  } else {
+    vid.pause();
+  }
+
+}
+
+function reInitialize(){
+  closeDialog('remove-video');
+  document.getElementById('video-player-container').style.display = 'none';
+  document.getElementById('video-container').style.display = 'block';
+  $( ".video-recorder" ).removeClass( "processing" );
+  totalSeconds = 0;
+  recorder_pause_state = 0;
+  recording_started = 0;
+  clearInterval(myInterval);
+  $( ".time-elapsed" ).html(pad(parseInt(totalSeconds / 60))+':'+pad(totalSeconds % 60));
+  var formData = new FormData();
+  // file name
+  formData.append('delete-file', uploaded_file);
+  var upload_url = 'recordRTC';
+  var upload_directory = upload_url+'/uploads/';
+  // delete using jQuery
+  $.ajax({
+      url: upload_url+'/delete.php', // replace with your own server URL
+      data: formData,
+      cache: false,
+      contentType: false,
+      processData: false,
+      type: 'POST',
+      success: function(response) {
+          if (response === 'success') {
+              //console.log('File Deleted');
+          } else {
+              //alert(response); // error/failure
+          }
+      }
+  });
+  recorder.initRecorder();
+}
+
+function saveVideo(){
+  var downloadSource = document.getElementById('video-player').src;
+  var downloadName = $( "#tag" ).val();
+  var atag = document.createElement("a");
+  atag.href = downloadSource;
+  atag.download = downloadName;
+  atag.click();
+  $( ".video-recorder" ).removeClass( "save-video" );
+  var formData = new FormData();
+  // file name
+  formData.append('delete-file', uploaded_file);
+  var upload_url = 'recordRTC';
+  var upload_directory = upload_url+'/uploads/';
+  // delete using jQuery
+  $.ajax({
+      url: upload_url+'/delete.php', // replace with your own server URL
+      data: formData,
+      cache: false,
+      contentType: false,
+      processData: false,
+      type: 'POST',
+      success: function(response) {
+          if (response === 'success') {
+              //console.log('File Deleted');
+          } else {
+              //alert(response); // error/failure
+          }
+      }
+  });
+}
+
+function openFullscreen() {
+  if(mirror_mode == 0){
+    var elem = document.getElementById('video-preview');
+  }
+  else{
+    var elem = document.getElementById('video-preview2');
+  }
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.mozRequestFullScreen) { /* Firefox */
+    elem.mozRequestFullScreen();
+  } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE/Edge */
+    elem.msRequestFullscreen();
+  }
+}
+
+function deleteVideo(){
+  $( ".video-recorder" ).addClass( "remove-video" );
+}
+
+function closeDialog(str){
+  $( ".video-recorder" ).removeClass(str);
+}
+
+function toggleSettings(){
+    $( ".dialog-settings" ).toggleClass( 'hidden' );
+}
+
+function setTime() {
+  if(recorder_pause_state == 0){
+    ++totalSeconds;
+    var tm = timestampToHMS(totalSeconds);
+   $( ".time-elapsed" ).html(tm);
+  }
+}
+
+function pad(val) {
+  var valString = val + "";
+  if (valString.length < 2) {
+    return "0" + valString;
+  } else {
+    return valString;
+  }
+}
+
+</script>
+</body></html>
